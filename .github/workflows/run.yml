@@ -1,0 +1,29 @@
+name: Run
+
+on:
+  schedule:
+    - cron: "*/8 * * * *"
+  push:
+
+jobs:
+  Check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+      - run: npm ci
+
+      - run: node index.js
+        env:
+          TWILIO_SID: ${{ secrets.TWILIO_SID }}
+          TWILIO_AUTH: ${{ secrets.TWILIO_AUTH }}
+          TWILIO_FROM: ${{ secrets.TWILIO_FROM }}
+          TWILIO_TO: ${{ secrets.TWILIO_TO }}
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: images
+          path: "*.png"
