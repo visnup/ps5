@@ -44,8 +44,8 @@ const sites = [
     console.log(
       await twilio.messages.create({
         body: `PS5 available?! ${url}`,
-        from: "+16507350005",
-        to: "+14153057168",
+        from: process.env.TWILIO_FROM,
+        to: process.env.TWILIO_TO,
       })
     );
 
