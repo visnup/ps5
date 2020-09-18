@@ -33,21 +33,6 @@ const sites = [
     defaultViewport: {width: 1280, height: 900},
   });
 
-  const availability = await Promise.all(
-    sites.map(async (site) => ({...site, available: await check(site)}))
-  );
-  browser.close();
-
-  const available = availability.filter((d) => d.available);
-  for (const {url} of available)
-    console.log(
-      await twilio.messages.create({
-        body: `PS5 available?! ${url}`,
-        from: process.env.TWILIO_FROM,
-        to: process.env.TWILIO_TO,
-      })
-    );
-
   async function check({url, selector, text}) {
     try {
       const [, name] = url.match(/([^.]+).com/);
@@ -71,4 +56,18 @@ const sites = [
     }
     return false;
   }
+
+  const availability = await Promise.all(
+    sites.map(async (site) => ({...site, available: await check(site)}))
+  );
+  browser.close();
+
+  for (const {url} of availability.filter((check) => check.available))
+    console.log(
+      await twilio.messages.create({
+        body: `PS5 available?! ${url}`,
+        from: process.env.TWILIO_FROM,
+        to: process.env.TWILIO_TO,
+      })
+    );
 })();
