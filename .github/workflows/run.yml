@@ -1,9 +1,9 @@
 name: Run
 
 on:
-  push:
   schedule:
-    - cron: "*/6 * * * *"
+    - cron: "*/8 * * * *"
+  push:
 
 jobs:
   Check:
