@@ -32,6 +32,12 @@ const sites = [
     selector: ".prod-ProductOffer-oosMsg",
     text: "out of stock",
   },
+  {
+    url:
+      "https://www.bhphotovideo.com/c/product/1595084-REG/sony_3005719_playstation_5_digital_edition.html",
+    selector: "[data-selenium='stockInfo']",
+    text: "coming soon",
+  },
 ];
 
 (async () => {
