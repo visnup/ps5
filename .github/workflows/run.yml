@@ -1,4 +1,4 @@
-name: Run
+name: run
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   push:
 
 jobs:
-  Check:
+  check:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,6 +14,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12"
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - run: npm ci
 
       - run: node index.js
