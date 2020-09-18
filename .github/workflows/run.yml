@@ -15,7 +15,13 @@ jobs:
         with:
           node-version: "12"
       - run: npm ci
+
       - run: node index.js
         env:
           TWILIO_SID: ${{ secrets.TWILIO_SID }}
           TWILIO_AUTH: ${{ secrets.TWILIO_AUTH }}
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: images
+          path: *.png
