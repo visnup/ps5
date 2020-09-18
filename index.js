@@ -30,7 +30,6 @@ const sites = [
 
 (async () => {
   const browser = await puppeteer.launch({
-    args: ["--disable-dev-shm-usage", "--no-sandbox"],
     defaultViewport: {width: 1280, height: 900},
   });
 
