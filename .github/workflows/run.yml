@@ -26,7 +26,7 @@ jobs:
           node-version: "12"
       - run: npm ci
 
-      - run: node index.js
+      - run: node index.js ${{ matrix.site }}
         env:
           TWILIO_SID: ${{ secrets.TWILIO_SID }}
           TWILIO_AUTH: ${{ secrets.TWILIO_AUTH }}
