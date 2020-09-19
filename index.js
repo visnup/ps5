@@ -41,40 +41,8 @@ const sites = [
 ];
 
 (async () => {
-  const browser = await puppeteer.launch({
-    defaultViewport: {width: 1280, height: 900},
-  });
-
-  async function check({url, selector, text}) {
-    try {
-      const [, name] = url.match(/([^.]+).com/);
-      const page = await browser.newPage();
-      await page.setUserAgent(
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"
-      );
-      await page.goto(url);
-      const element = await page.$(selector);
-      if (element) {
-        await element.screenshot({path: `${name}.png`});
-        const innerText = await element.getProperty("innerText");
-        if ((await innerText.jsonValue()).toLowerCase().includes(text))
-          return console.log(`🔴 ${name}: unavailable`), false;
-      }
-      await page.screenshot({path: `${name}.png`});
-      console.log(`🟢 ${name}: available?!`);
-      return true;
-    } catch (e) {
-      console.log(e);
-    }
-    return false;
-  }
-
-  const availability = await Promise.all(
-    sites.map(async (site) => ({...site, available: await check(site)}))
-  );
-  browser.close();
-
-  for (const {url} of availability.filter((check) => check.available))
+  const site = sites.find((d) => d.url.includes(process.argv[2]));
+  if (await check(site))
     console.log(
       await twilio.messages.create({
         body: `PS5 available?! ${url}`,
@@ -82,4 +50,34 @@ const sites = [
         to: process.env.TWILIO_TO,
       })
     );
+  else process.exit(1);
 })();
+
+async function check({url, selector, text}) {
+  const browser = await puppeteer.launch({
+    defaultViewport: {width: 1280, height: 900},
+  });
+  try {
+    const [, name] = url.match(/([^.]+).com/);
+    const page = await browser.newPage();
+    await page.setUserAgent(
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"
+    );
+    await page.goto(url);
+    const element = await page.$(selector);
+    if (element) {
+      await element.screenshot({path: `${name}.png`});
+      const innerText = await element.getProperty("innerText");
+      if ((await innerText.jsonValue()).toLowerCase().includes(text))
+        return console.log(`🔴 ${name}: unavailable`), false;
+    }
+    await page.screenshot({path: `${name}.png`});
+    console.log(`🟢 ${name}: available?!`);
+    return true;
+  } catch (e) {
+    console.log(e);
+    return false;
+  } finally {
+    browser.close();
+  }
+}

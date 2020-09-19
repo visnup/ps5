@@ -9,6 +9,16 @@ jobs:
   check:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        site:
+          - amazon
+          - bestbuy
+          - bhphotovideo
+          - gamestop
+          - target
+          - walmart
+
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -24,6 +34,7 @@ jobs:
           TWILIO_TO: ${{ secrets.TWILIO_TO }}
 
       - uses: actions/upload-artifact@v2
+        if: ${{always()}}
         with:
           name: images
           path: "*.png"
