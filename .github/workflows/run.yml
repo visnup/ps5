@@ -35,7 +35,7 @@ jobs:
           TWILIO_TO: ${{ secrets.TWILIO_TO }}
 
       - uses: actions/upload-artifact@v2
-        if: ${{always()}}
+        if: ${{ always() }}
         with:
-          name: ${{matrix.site}}
+          name: ${{ matrix.site }}
           path: "*.png"
