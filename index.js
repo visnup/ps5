@@ -4,7 +4,7 @@ const twilio = Twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH);
 
 const sites = [
   {
-    url: "https://www.amazon.com/PlayStation-5-Console/dp/B08FC5L3RG/",
+    url: "https://www.amazon.com/dp/B08FC6MR62",
     selector: "#availability",
     text: "unavailable",
   },
