@@ -41,7 +41,7 @@ const sites = [
   {
     url:
       "https://www.samsclub.com/p/ps5-pre-order/prod24980181?xid=plp_product_1_14",
-    selector: ".sc-oos-card-label",
+    selector: ".sc-pc-large-desktop-oos-card-out-of-stock-text",
     text: "out of stock",
   },
 ];
