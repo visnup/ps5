@@ -27,10 +27,9 @@ const sites = [
     text: "not available",
   },
   {
-    url:
-      "https://www.walmart.com/ip/Sony-PlayStation-5-Digital-Edition/493824815",
-    selector: ".error-page-message",
-    text: "backorder",
+    url: "https://www.walmart.com/ip/PlayStation5-Console/363472942",
+    selector: ".prod-ProductOffer-oosMsg",
+    text: "out of stock",
   },
   {
     url:
