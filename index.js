@@ -45,7 +45,7 @@ const sites = [
   if (await check(site))
     console.log(
       await twilio.messages.create({
-        body: `PS5 available?! ${url}`,
+        body: `PS5 available?! ${site.url}`,
         from: process.env.TWILIO_FROM,
         to: process.env.TWILIO_TO,
       })
