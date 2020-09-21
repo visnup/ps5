@@ -38,6 +38,12 @@ const sites = [
     selector: "[data-selenium='stockInfo']",
     text: "coming soon",
   },
+  {
+    url:
+      "https://www.samsclub.com/p/ps5-pre-order/prod24980181?xid=plp_product_1_14",
+    selector: ".sc-oos-card-label",
+    text: "out of stock",
+  },
 ];
 
 (async () => {

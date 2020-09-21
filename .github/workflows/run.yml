@@ -17,6 +17,7 @@ jobs:
           - bestbuy
           - bhphotovideo
           - gamestop
+          - samsclub
           - target
           - walmart
 
