@@ -15,8 +15,8 @@ jobs:
         site:
           - amazon
           - bestbuy
-          - bhphotovideo
-          # - gamestop
+          # - bhphotovideo
+          - gamestop
           - target
           - walmart
 
