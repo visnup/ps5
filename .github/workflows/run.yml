@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         site:
-          - amazon
+          # - amazon
           - bestbuy
           # - bhphotovideo
           - gamestop
