@@ -2,7 +2,7 @@ name: run
 
 on:
   schedule:
-    - cron: "*/11 * * * *"
+    - cron: "*/17 * * * *"
   push:
 
 jobs:
@@ -13,11 +13,11 @@ jobs:
       fail-fast: false
       matrix:
         site:
-          # - amazon
+          - amazon
           - bestbuy
-          # - bhphotovideo
+          - bhphotovideo
           - gamestop
-          # - target
+          - target
           - walmart
 
     steps:
