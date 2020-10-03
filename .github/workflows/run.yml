@@ -2,7 +2,7 @@ name: run
 
 on:
   schedule:
-    - cron: "*/17 * * * *"
+    - cron: "*/13 * * * *"
   push:
 
 jobs:
