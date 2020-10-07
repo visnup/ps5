@@ -15,7 +15,7 @@ const sites = [
   {
     url:
       "https://www.target.com/p/playstation-5-digital-edition-console/-/A-81114596",
-    content: {"[data-test='preorderFulfillment']": "sold out"},
+    content: {"[data-test='preorderFulfillment']": "sold out", "[data-test='flexible-fulfillment']": "sold out"},
   },
   {
     url:
