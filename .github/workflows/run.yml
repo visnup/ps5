@@ -18,7 +18,7 @@ jobs:
           # - bhphotovideo
           - gamestop
           # - target
-          - walmart
+          # - walmart
 
     steps:
       - uses: actions/checkout@v2
