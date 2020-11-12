@@ -14,11 +14,11 @@ jobs:
       matrix:
         site:
           # - amazon
-          # - bestbuy
+          - bestbuy
           # - bhphotovideo
           - gamestop
-          # - target
-          # - walmart
+          - target
+          - walmart
 
     steps:
       - uses: actions/checkout@v2

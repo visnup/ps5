@@ -10,12 +10,12 @@ const sites = [
   {
     url:
       "https://www.bestbuy.com/site/sony-playstation-5-digital-edition-console/6430161.p?skuId=6430161",
-    content: {".fulfillment-add-to-cart-button": "coming soon"},
+    content: {".fulfillment-add-to-cart-button": "sold out"},
   },
   {
     url:
       "https://www.target.com/p/playstation-5-digital-edition-console/-/A-81114596",
-    content: {"[data-test='preorderFulfillment']": "sold out", "[data-test='flexible-fulfillment']": "sold out"},
+    content: {"[data-test='preorderFulfillment']": "sold out", "[data-test='flexible-fulfillment']": "isn't eligible for shipping"},
   },
   {
     url:
@@ -27,6 +27,7 @@ const sites = [
       "https://www.walmart.com/ip/Sony-PlayStation-5-Digital-Edition/493824815",
     content: {
       ".prod-ProductOffer-oosMsg": "out of stock",
+      ".prod-blitz-copy-message": "starting at",
       ".error-page-message": "backorder",
     },
   },
