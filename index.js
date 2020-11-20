@@ -28,6 +28,7 @@ const sites = [
     content: {
       ".prod-ProductOffer-oosMsg": "out of stock",
       ".prod-blitz-copy-message": "while supplies last",
+      ".blitz-container": "9:00 PM ET on Wed, Nov 25",
       ".error-page-message": "backorder",
     },
   },
