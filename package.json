@@ -7,7 +7,7 @@
   "main": "index.js",
   "dependencies": {
     "env-cmd": "^10.1.0",
-    "puppeteer": "^5.4.1",
+    "puppeteer": "^5.5.0",
     "twilio": "^3.51.0"
   },
   "devDependencies": {},
