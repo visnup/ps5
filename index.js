@@ -27,7 +27,7 @@ const sites = [
       "https://www.walmart.com/ip/Sony-PlayStation-5-Digital-Edition/493824815",
     content: {
       ".prod-ProductOffer-oosMsg": "out of stock",
-      ".prod-blitz-copy-message": "9:00 pm et",
+      ".prod-blitz-copy-message": "out of stock",
       ".error-page-message": "backorder",
     },
   },
