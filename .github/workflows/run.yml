@@ -13,12 +13,13 @@ jobs:
       fail-fast: false
       matrix:
         site:
-          # - amazon
+          - amazon
           - bestbuy
           # - bhphotovideo
+          - costco
           - gamestop
-          # - target
-          # - walmart
+          - target
+          - walmart
 
     steps:
       - uses: actions/checkout@v2
