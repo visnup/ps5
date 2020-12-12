@@ -24,7 +24,7 @@ const sites = [
   {
     url:
       "https://www.gamestop.com/video-games/playstation-5/consoles/products/playstation-5-digital-edition/11108141.html",
-    content: { ".add-to-cart-buttons": "not available", ".container": "could not find the page" },
+    content: { ".add-to-cart-buttons": "not available", "h1": "could not find the page" },
   },
   {
     url:
