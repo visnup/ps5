@@ -10,7 +10,7 @@ const sites = [
   {
     url:
       "https://www.bestbuy.com/site/sony-playstation-5-digital-edition-console/6430161.p?skuId=6430161",
-    content: { ".fulfillment-add-to-cart-button": "sold out" },
+    content: { ".fulfillment-add-to-cart-button": "coming soon" },
   },
   {
     url:
