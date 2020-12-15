@@ -10,7 +10,11 @@ const sites = [
   {
     url:
       "https://www.bestbuy.com/site/sony-playstation-5-digital-edition-console/6430161.p?skuId=6430161",
-    content: { ".fulfillment-add-to-cart-button": "sold out", ".add-to-cart-button": "coming soon" },
+    content: {
+      ".fulfillment-add-to-cart-button": "sold out",
+      ".add-to-cart-button": "coming soon",
+      ".VPT-title": "something went wrong",
+    },
   },
   {
     url:
@@ -24,7 +28,10 @@ const sites = [
   {
     url:
       "https://www.gamestop.com/video-games/playstation-5/consoles/products/playstation-5-digital-edition/11108141.html",
-    content: { ".add-to-cart-buttons": "not available", "h1": "could not find the page" },
+    content: {
+      ".add-to-cart-buttons": "not available",
+      h1: "could not find the page",
+    },
   },
   {
     url:
